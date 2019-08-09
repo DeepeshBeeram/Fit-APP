@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <div>
+        <button mat-icon-button (click)="onToggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div class="logo">LOGO</div>
+    <div fxFlex fxLayout fxLayoutAlign="flex-end">
+        <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+            <li><a [routerLink]="['/signup']" routerLinkActive="active">SignUp</a></li>
+            <li><a [routerLink]="['/login']" routerLinkActive="active">Login</a></li>
+            <li><a [routerLink]="['/training']" routerLinkActive="active">Training</a></li>
+        </ul>
+    </div>
+</mat-toolbar>
