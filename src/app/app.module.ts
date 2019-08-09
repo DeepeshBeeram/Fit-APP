@@ -14,13 +14,20 @@ import {MatFormFieldModule,
   MatInputModule, MatIconModule, MatButtonModule, MatDatepickerModule,
    MatNativeDateModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule, 
    MatListModule, MatTabsModule, MatCardModule, MatProgressSpinnerModule, 
-   MatDialogModule} from '@angular/material';
+   MatDialogModule,
+   MatSelectModule,
+   MatTableModule,
+   MatSortModule,
+   MatPaginatorModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { SidenavComponent } from './navigation/sidenav/sidenav.component';
 import { ToolbarComponent } from './navigation/toolbar/toolbar.component';
 import { StopTrainingComponent } from './training/current-training/stop-training.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth.guard';
+import { TrainingService } from './training/training.service';
 
 @NgModule({
   declarations: [
@@ -54,12 +61,16 @@ import { StopTrainingComponent } from './training/current-training/stop-training
     MatTabsModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
 
 
   ],
   
-  providers: [],
+  providers: [AuthService, AuthGuard, TrainingService],
   bootstrap: [AppComponent],
   entryComponents: [StopTrainingComponent]
 })
